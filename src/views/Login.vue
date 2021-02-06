@@ -7,6 +7,7 @@
 </template>
 
 <script lang="ts">
+
 export default {
   data: function() {
       return {
@@ -16,7 +17,10 @@ export default {
     },
     methods: {
         login() {
-          window.location.href = '/'
+          this.$store.commit('create', this.email)
+          this.$router.push({
+              name: 'Home'
+            })
           }
       }
   }
