@@ -11,7 +11,9 @@ export default new Vuex.Store({
   mutations: {
     create(state, token) {
       state.token = token
-      console.log(state.token)
+    },
+    destroy(state) {
+      state.token = ''
     }
   },
   actions: {
