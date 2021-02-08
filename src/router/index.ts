@@ -18,7 +18,14 @@ const routes: Array<RouteConfig> = [
     component: Login,
     meta: {
       isPublic: true
-    }
+    },
+    beforeEnter: (to, from, next) => {
+      if(Store.state.token) {
+        next('/')
+      }else{
+        next()
+      }
+    },
   }
 ]
 
@@ -35,5 +42,6 @@ router.beforeEach((to, from, next) => {
     next('/login')
   }
 })
+
 
 export default router
