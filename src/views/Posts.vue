@@ -23,18 +23,6 @@ export default {
       .catch((e) => {
         alert(e);
       });
-  },
-  methods: {
-    getIp() {
-      this.axios
-        .get("/api/v1/posts")
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((e) => {
-          alert(e);
-        });
-    },
-  },
+  }
 };
 </script>
