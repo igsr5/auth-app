@@ -1,6 +1,6 @@
 <template>
   <ul>
-    <li v-for="(post, index) in posts" :key="index">{{ post.title }}</li>
+    <li v-for="(post, index) in posts" :key="index" @click="getIp">{{ post.title }}</li>
   </ul>
 </template>
 
@@ -14,6 +14,17 @@ export default {
               {title: 'cccc'},
             ]
           }
-      }
+      },
+      methods: {
+          getIp() {
+              this.axios.get('https://httpbin.org/get')
+                .then((response) => {
+                    alert(response.data.origin);
+                  })
+                .catch((e) => {
+                    alert(e)
+                  })
+            }
+        }
   }
 </script>
