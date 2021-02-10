@@ -36,10 +36,10 @@ export default new Vuex.Store({
           }
         )
         .then((res) => {
-          console.log(res);
+          commit('create', res.data.token)
         })
         .catch((e) => {
-          console.log(e);
+          alert(e);
         });
     },
   },

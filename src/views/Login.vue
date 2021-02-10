@@ -15,14 +15,14 @@ export default {
     };
   },
   methods: {
-    login() {
-      this.$store.commit("create", this.email);
+    setToken() {
+      this.$store.dispatch("authRequest", {
+        email: this.email,
+        password: this.password,
+      });
       this.$router.push({
         name: "Home",
       });
-    },
-    setToken() {
-      this.$store.dispatch('authRequest', { email: this.email, password: this.password });
     },
   },
 };
