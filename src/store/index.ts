@@ -19,8 +19,6 @@ export default new Vuex.Store({
   },
   actions: {
     authRequest({ state, commit }, { email, password }) {
-      console.log(email);
-      console.log(password);
       const headers = {
         "Content-Type": "application/json",
       };
