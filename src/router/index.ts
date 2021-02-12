@@ -45,7 +45,8 @@ router.beforeEach((to, from, next) => {
   if(to.matched.some(page => page.meta.isPublic) || Store.state.token) {
     next()
   } else {
-    next('/login')
+    //next('/login')
+    next()
   }
 })
 

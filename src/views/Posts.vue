@@ -1,13 +1,13 @@
 <template>
   <ul>
     <li v-for="post in posts" :key="post.id">
-      {{ post.title }}
+      {{ post.name }}
     </li>
   </ul>
 </template>
 
 <script lang="ts">
-import Axios from 'axios'
+import Axios from "axios";
 export default {
   data: () => {
     return {
@@ -15,14 +15,14 @@ export default {
     };
   },
   mounted() {
-    Axios
-      .get("/api/v1/posts")
+    Axios.get("users", { headers: { Authorization: "Token "+this.$store.state.token } ,data: {}})
       .then((response) => {
-        this.posts = response.data.data
+        console.log(response)
+        this.posts = response.data;
       })
       .catch((e) => {
         alert(e);
       });
-  }
+  },
 };
 </script>
